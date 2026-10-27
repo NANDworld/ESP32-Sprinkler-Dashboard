@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 Sprinkler Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🌡️ ESP32 Sprinkler Dashboard</h1>
+        <div class="status" id="status">
+            <span class="indicator" id="indicator"></span>
+            <span id="status-text">Conectando...</span>
+        </div>
+    </header>
+
+    <main>
+        <div class="grid">
+            <div class="card temp">
+                <div class="icon">🌡️</div>
+                <h3>Temperatura</h3>
+                <div class="value" id="temp">-- °C</div>
+            </div>
+
+            <div class="card humid">
+                <div class="icon">💧</div>
+                <h3>Umidade</h3>
+                <div class="value" id="humid">-- %</div>
+            </div>
+
+            <div class="card smoke">
+                <div class="icon">🔥</div>
+                <h3>Fumaça ADC</h3>
+                <div class="value" id="smoke_adc">--</div>
+            </div>
+
+            <div class="card">
+                <div class="icon">💨</div>
+                <h3>Fumaça</h3>
+                <div class="value" id="smoke">--</div>
+            </div>
+
+            <div class="card">
+                <div class="icon">⚡</div>
+                <h3>Bomba</h3>
+                <div class="value" id="pump">--</div>
+            </div>
+
+            <div class="card">
+                <div class="icon">🎮</div>
+                <h3>Modo</h3>
+                <div class="value" id="mode">--</div>
+            </div>
+        </div>
+
+        <div class="history">
+            <h3>📊 Histórico (últimas leituras)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Horário</th>
+                        <th>Temp (°C)</th>
+                        <th>Umid (%)</th>
+                        <th>Fum ADC</th>
+                        <th>Bomba</th>
+                        <th>Modo</th>
+                    </tr>
+                </thead>
+                <tbody id="history-body">
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
